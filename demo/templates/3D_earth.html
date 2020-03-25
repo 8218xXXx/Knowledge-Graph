@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/jQuery v3.1.1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="iceStone <ice@wedn.net>">
+    <title>首页</title>
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/goTop.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <script src="../static/js/echarts.js"></script>
+    <script src="../static/js/echarts-gl.min.js"></script>
+    <script src="../static/theme/dark.js"></script>
+    <script src="../static/js/world.js"></script>
+</head>
+<body>
+<div id="main" style="width:1700px;height:750px; background: #3f3f3f; color: #00aaff">
+    <script>
+        let canvas = document.createElement('canvas');
+        let mapChart = echarts.init(canvas, null, {
+            width: 4096,
+            height: 2048
+        });
+        mapChart.setOption({
+            series: [{
+                type: 'map',
+                map: 'world',
+                // 绘制完整尺寸的 echarts 实例
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                boundingCoords: [
+                    [-180, 90],
+                    [180, -90]
+                ]
+            }]
+        });
+        option = {
+            title: {
+                text: 'Click on an area for more detail',
+                textStyle: {
+                    color: '#fff'
+                }
+            },
+            backgroundColor: '#333',
+            tooltip: {
+                show: true
+            },
+            visualMap: [{
+                // show: false,
+                type: 'continuous',
+                seriesIndex: 0,
+                text: ['scatter3D'],
+                textStyle: {
+                    color: '#fff'
+                },
+                calculable: true,
+                max: 5000,
+                inRange: {
+                    color: ['#87aa66', '#eba438', '#d94d4c']
+                }
+            }],
+            globe: {
+                baseTexture: mapChart,
+                // shading: 'lambert',
+                light: { // 光照阴影
+                    main: {
+                        color: '#fff', // 光照颜色
+                        intensity: 1.2, // 光照强度
+                        // shadowQuality: 'high', //阴影亮度
+                        shadow: false, // 是否显示阴影
+                        alpha: 40,
+                        beta: -30
+                    },
+                    ambient: {
+                        intensity: 0.5
+                    }
+                },
+                viewControl: {
+                    alpha: 30,
+                    beta: 160,
+                    // targetCoord: [116.46, 39.92],
+                    autoRotate: true,
+                    autoRotateAfterStill: 10,
+                    distance: 240
+                }
+            },
+            series: [{
+                name: 'lines3D',
+                type: 'lines3D',
+                coordinateSystem: 'globe',
+                effect: {
+                    show: true
+                },
+                blendMode: 'lighter',
+                lineStyle: {
+                    width: 1
+                },
+                data: [],
+                silent: false
+            }]
+        }
+        // 随机数据
+        for (let i = 0; i < 300; i++) {
+            option.series[0].data = option.series[0].data.concat(rodamData())
+        }
+
+        function rodamData() {
+            let name = '随机点' + Math.random().toFixed(5) * 100000
+            // let longitude = Math.random() * 62 + 73
+            let longitude = Math.random() * 360
+            let longitude2 = Math.random() * 360 - 180
+            // let latitude = Math.random() * 50 + 3.52
+            let latitude = Math.random() * 360
+            let latitude2 = Math.random() * 180 - 90
+            return {
+                coords: [
+                    [longitude2, latitude2],
+                    [longitude, latitude]
+                ],
+                value: (Math.random() * 3000).toFixed(2)
+            }
+        }
+
+        // 添加地图详细canvas
+        $('<canvas id="sMap" style="position: absolute; top: 0; left: 0; width: 100%; height: calc(100% + 30px); background: #333; z-index: -1"></canvas>').appendTo($('#chart-panel'))
+        // 双击返回地球
+        $('#sMap').on('dblclick', () => {
+            $('#sMap').css('z-index', '-1')
+        })
+        let sMap = echarts.init(document.getElementById('sMap'), null, {
+            width: $('#sMap').width(),
+            height: $('#sMap').height()
+        })
+
+        // 点击地球获取该区域地图
+        mapChart.on('click', function (params) {
+            console.log(params)
+            let name = params.name
+            let mapJson = 'https://raw.githubusercontent.com/Mying666/EC-JSON/gh-pages/json/' + name + '.json'
+            $('#sMap').css('z-index', '999')
+            sMap.showLoading()
+            $.getJSON(mapJson, geoJson => {
+                let data = []
+                geoJson.features.forEach(d => {
+                    data.push({
+                        name: d.properties.name,
+                        value: (Math.random() * 3000).toFixed(2)
+                    })
+                })
+                echarts.registerMap(name, geoJson);
+                sMap.setOption({
+                    title: {
+                        text: 'Double click go back',
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    },
+                    visualMap: [{
+                        show: false,
+                        type: 'continuous',
+                        seriesIndex: 0,
+                        text: ['scatter3D'],
+                        textStyle: {
+                            color: '#fff'
+                        },
+                        calculable: true,
+                        max: 3000,
+                        inRange: {
+                            color: ['#87aa66', '#eba438', '#d94d4c']
+                        }
+                    }],
+                    series: [{
+                        type: 'map',
+                        map: name,
+                        // roam: true,
+                        zoom: 1,
+                        // 绘制完整尺寸的 echarts 实例
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        data: data
+                    }]
+                });
+                sMap.hideLoading()
+            })
+        });
+    </script>
+</div>
+</body>
+</html>

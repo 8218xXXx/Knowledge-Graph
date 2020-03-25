@@ -1,0 +1,602 @@
+/*
+* @Author: mingming
+* @Date:   2017-07-01 19:20:27
+* @Last Modified by:   admin
+* @Last Modified time: 2017-07-07 15:53:41
+*/
+
+/* 导航条开始 */
+.vivioNav {
+	background-color: rgba(255, 255, 255, 0.97);
+	/*background-color: rgba(	0,0,0,0.97);*/
+	border: none;
+	box-sizing: border-box;
+	/*position: relative;*/
+	margin-bottom: 10px;
+	height: 40px;
+	/*position: fixed;*/
+	z-index: 10000;
+	width: 100%;
+	border-radius: 0;
+	left: 0;
+	top: 0;
+}
+.vivioNav #vivio-navbar-brand {
+	display: inline-block;
+	position: absolute;
+    left: 110px;
+    top: 8px;
+}
+.vivioNav .navbar-nav li>a {
+	display: inline-block;
+	text-align: center;
+	color: rgb(132, 132, 132);
+}
+.vivioNav #newVersion {
+	/*color: #0087ca !important;*/
+	color: white;
+	border: 0px solid transparent;
+	/*border-color: rgb(0, 135, 205);*/
+	border-color: white;
+	border-radius: 120px;
+	font-size: 28px;
+	display: inline-block;
+	left: 0px;
+    font-family:Georgia;
+}
+
+.vivioNav .navbar-header {
+	position: relative;
+}
+.vivioNav  .navbar-right {
+	position: absolute;
+	right: 32px;
+	top: 25px;
+}
+.vivioNav #newVersion:hover {
+	text-decoration: none;
+}
+#vivio-product-link {
+	position: static;
+}
+.vivioNav  .navbar-nav li >a {
+	transition: background-color .3s ease;
+	font-weight: 200;
+	font-size: 12px;
+	font-family: "FZLanTingHei-L-GBK", "GothamBook", "helvetica", "arial", "Microsoft Yahei", "微软雅黑";
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background: #2ba5d6;
+	color: rgba(255, 255, 255, .97);
+}
+.vivioNav  .navbar-nav li:hover>a {
+	background: #2ba5d6;
+	color: rgba(255, 255, 255, .97);
+}
+.vivioNav  .navbar-nav li.notCurrent a {
+	background: #fff;
+	color: rgb(102, 102, 102);
+}
+.vivioNav  .navbar-right li {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: #aaa solid 1px;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 28px;
+	cursor: pointer;
+}
+.vivioNav  .navbar-right .vivio-icon {
+	background-image: url(../img/vivo-gb-ico.png);
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-top: 5px;
+}
+.vivioNav  .navbar-right .nav-t-kefu em {
+	width: 88px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	border: #aaa solid 1px;
+	border-radius: 3px;
+	position: absolute;
+	top: 34px;
+	left: 50%;
+	margin-left: -44px;
+	color: #999;
+	font-size: 12px;
+	vertical-align: middle;
+	font-weight: normal;
+	font-style: normal;
+	display: none;
+}
+.vivioNav  .navbar-right .nav-t-kefu:hover em {
+	display: block;
+}
+.vivioNav  .navbar-right .nav-t-kefu .vivio-icon {
+	background-position: -36px 0;
+}
+.vivioNav  .navbar-right.nav-t-search .vivio-icon {
+	background-position: 0 0;
+}
+.vivioNav  .navbar-right .nav-t-userInformation .vivio-icon {
+	background-position: -18px 0;
+}
+.vivioNav  .navbar-right .nav-t-kefu:hover {
+	background-color: #2ba5d6;
+	border-color: #2ba5d6;
+}
+.vivioNav  .navbar-right .nav-t-kefu:hover .vivio-icon {
+	background-position: -36px -18px;
+}
+.vivioNav  .navbar-right .nav-t-search:hover .vivio-icon {
+	opacity: .7;
+	transition: opacity .3s ease;
+}
+.vivioNav  .navbar-right .nav-t-userInformation:hover .vivio-icon {
+	opacity: .7;
+	transition: opacity .3s ease;
+}
+.vivioNav  .navbar-right {
+	z-index: 999;
+}
+
+/* 产品下拉导航菜单开始 */
+#vivio-product-link .vivio-product {
+	visibility: hidden;
+	width: 100%;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0);
+	z-index: 999;
+	opacity: 0;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease;
+	left: 0;
+}
+.vivio-container {
+	max-width: 1000px;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 80%;
+}
+.vivio-product dl {
+	width: 20%;
+	float: left;
+}
+.vivio-product dl dt {
+	padding-bottom: 30px;
+	width: 100%;
+	height: 52px;
+}
+.vivio-product dl dd {
+	width: 100%;
+	height: 35px;
+}
+.vivio-product dl a {
+	text-decoration: none;
+	font-weight: 400;
+}
+.vivio-product dl dt a:after {
+	width: 6px;
+	height: 10px;
+	background-position: -70px 0;
+	margin-left: 6px;
+	background-image: url(../img/vivo-gb-ico.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	position: relative;
+	content: '';
+}
+.vivio-product dl dt:hover a:after {
+	background-position: -78px 0;
+}
+.vivio-product dl dt:hover a, .vivio-product dl dd:hover a {
+	color: #2ba5d6;
+}
+.vivio-product dl  a {
+	font-family: "FZLanTingHei-L-GBK", "GothamBook", "helvetica", "arial", "Microsoft Yahei", "微软雅黑";
+}
+
+/* 动画过渡效果 */
+#vivio-product-link:hover .vivio-product {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+	background-color: rgba(255, 255, 255, 1);
+}
+#vivio-product-link:hover .vivio-product dl dt {
+	visibility: visible;
+	opacity: 1;
+}
+.vivio-product dl dd a {
+	display: block;
+	font-size: 14px;
+	color: #666;
+	height: 2.5em;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	transition: color .3s ease;
+	width: 90%;
+}
+.vivio-product dl dt a {
+	font-size: 16px;
+	display: block;
+	color: #333;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	transition: color .3s ease;
+}
+#vivio-product-link:hover .vivio-product dl dt, #vivio-product-link:hover .vivio-product dl dd {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(-20px, 0);
+	-webkit-transform: translate(-20px, 0);
+	-moz-transform: translate(-20px, 0);
+}
+.vivio-product dl dt, .vivio-product dl dd {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: -webkit-transform .3s ease, opacity .3s ease;
+	-moz-transition: -moz-transform .3s ease, opacity .3s ease;
+	transition: transform .3s ease, opacity .3s ease;
+}
+.vivio-product dl dt:nth-child(1) {
+	-webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	transition-delay: .5s;
+}
+.vivio-product dl dd:nth-child(2) {
+	-webkit-transition-delay: .54s;
+	-moz-transition-delay: .54s;
+	transition-delay: .54s;
+}
+.vivio-product dl dd:nth-child(3) {
+	-webkit-transition-delay: .56s;
+	-moz-transition-delay: .56s;
+	transition-delay: .56s;
+}
+.vivio-product dl dd:nth-child(4) {
+	-webkit-transition-delay: .58s;
+	-moz-transition-delay: .58s;
+	transition-delay: .58s;
+}
+.vivio-product dl dd:nth-child(5) {
+	-webkit-transition-delay: .6s;
+	-moz-transition-delay: .6s;
+	transition-delay: .6s;
+}
+.vivio-product dl dd:nth-child(6) {
+	-webkit-transition-delay: .62s;
+	-moz-transition-delay: .62s;
+	transition-delay: .62s;
+}
+
+/* mark */
+
+/*
+.vivio-product-opened dl dt {
+	-webkit-transition-delay: 0s;
+	-moz-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.vivio-product-opened dl dd:nth-child(2) {
+	-webkit-transition-delay: .04s;
+	-moz-transition-delay: .04s;
+	transition-delay: .04s;
+}
+.vivio-product-opened dl dd:nth-child(3) {
+	-webkit-transition-delay: .06s;
+	-moz-transition-delay: .06s;
+	transition-delay: .06s;
+}
+.vivio-product-opened dl dd:nth-child(4) {
+	-webkit-transition-delay: .08s;
+	-moz-transition-delay: .08s;
+	transition-delay: .08s;
+}
+.vivio-product-opened dl dd:nth-child(5) {
+	-webkit-transition-delay: .1s;
+	-moz-transition-delay: .1s;
+	transition-delay: .1s;
+}
+.vivio-product-opened dl dd:nth-child(6) {
+	-webkit-transition-delay: .12s;
+	-moz-transition-delay: .12s;
+	transition-delay: .12s;
+}
+*/
+
+/* 产品下拉导航菜单结束 */
+@media (max-width:767px) {
+	.container {
+		padding: 0;
+	}
+	.vivioNav {
+		border-bottom: none;
+	}
+	#vivio-product-link:hover .vivio-product {
+		visibility: hidden;
+		opacity: 0;
+		display: none;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li> a {
+		margin-left: -10px;
+		opacity: 0;
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		transition: all 1s ease;
+		-webkit-transition-delay: .5s;
+		-moz-transition-delay: .5s;
+		transition-delay: .5s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(1)>a {
+		-webkit-transition-delay: .22s;
+		-moz-transition-delay: .22s;
+		transition-delay: .22s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(2)>a {
+		-webkit-transition-delay: .26s;
+		-moz-transition-delay: .26s;
+		transition-delay: .26s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(3)>a {
+		-webkit-transition-delay: .3s;
+		-moz-transition-delay: .3s;
+		transition-delay: .3s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(4)>a {
+		-webkit-transition-delay: .34s;
+		-moz-transition-delay: .34s;
+		transition-delay: .34s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(5)>a {
+		-webkit-transition-delay: .38s;
+		-moz-transition-delay: .38s;
+		transition-delay: .38s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(6)>a {
+		-webkit-transition-delay: .42s;
+		-moz-transition-delay: .42s;
+		transition-delay: .42s;
+	}
+	#vivio-navbar-collapse .vivio-navbar-nav li:nth-child(7)>a {
+		-webkit-transition-delay: .46s;
+		-moz-transition-delay: .46s;
+		transition-delay: .46s;
+	}
+	.vivioNav #vivio-navbar-brand {
+		background: url(../img/out_logo.jpg);
+		background-size: 70px;
+		background-repeat: no-repeat;
+		width: 70px;
+		top: 10px;
+		height: 60px;
+	}
+	.vivioNav {
+		height: 100px;
+	}
+	.vivioNav .container-fluid {
+		padding: 0;
+	}
+	.vivioNav .navbar-header {
+		margin: 0;
+	}
+	.vivioNav .navbar-header {
+		height: 49px;
+		line-height: 49px;
+		border-bottom: none;
+	}
+	#vivio-navbar-collapse {
+		border: none;
+		background: #fff;
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		margin: 0;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		display: block;
+		height: 0;
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		transition: all .3s ease;
+	}
+	.vivioNav .navbar-nav li {
+		width: 100%;
+	}
+	.vivioNav .navbar-nav li>a {
+		width: 100%;
+		padding-left: 26px;
+		padding-right: 26px;
+		font-size: 16px;
+		text-align: left;
+	}
+	.vivioNav #newVersion {
+		padding: 1px 15px;
+		font-size: 28px;
+		line-height: 28px;
+		margin-left: 33%;
+        font-family:Georgia;
+	}
+
+	/* 汉堡菜单 */
+	.vivioNav  .navbar-toggle {
+		border: transparent;
+	}
+	.vivioNav .navbar-toggle {
+		background: #fff;
+		padding: 0;
+		margin: 0;
+		height: 30px;
+		border: none;
+		margin-right: 4px;
+	}
+	.vivioNav .navbar-toggle .vivio-icon-bar {
+		display: inline-block;
+		background-image: url(../img/vivo-gb-ico.png);
+		background-repeat: no-repeat;
+		width: 30px;
+		height: 30px;
+		background-position: 3px -36px;
+		-webkit-transition: all .5s .2s ease-out;
+		margin: auto;
+		position: absolute;
+		top: 15px;
+		left: -30px;
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+	.vivioNav .navbar-toggle .vivio-icon-close {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		-webkit-transition: all .3s .1s ease-out;
+		margin: auto;
+		position: absolute;
+		top: 15px;
+		left: -30px;
+		background-image: url(../img/vivo-gb-ico.png);
+		background-repeat: no-repeat;
+		background-position: -19px -36px;
+		opacity: 0;
+		transform: scale(0, 0);
+	}
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+		background: #fff;
+		color: rgb(102, 102, 102);
+	}
+}
+@media (min-width:767px) and (max-width:992px) {
+	.vivio-navbar-nav {
+		margin-left: 16%;
+	}
+	.vivioNav {
+		height: 80px;
+
+	}
+	.vivioNav .container-fluid {
+		padding-right: 15px;
+		padding-left: 32px;
+	}
+	.vivioNav #vivio-navbar-brand {
+		width: 70px;
+		height: 70px;
+		background: url(../img/out_logo.jpg);
+		/*background: url(../img/bupt.png);*/
+		background-repeat: no-repeat;
+		top: 20px;
+	}
+	.vivioNav .navbar-header {
+		height: 80px;
+		line-height: 80px;
+	}
+	.vivioNav .navbar-nav li>a {
+		height: 80px;
+		line-height: 49px;
+		padding-left: .8em;
+		padding-right: .8em;
+		font-size: 16px;
+	}
+	.vivioNav #newVersion {
+		padding: 1px 15px;
+		margin-left: 32px;
+		margin-right: 60px;
+		font-size: 28px;
+		display: none;
+        font-family:Georgia;
+	}
+}
+@media (min-width:992px)and (max-width:1270px) {
+	.vivio-navbar-nav {
+		margin-left: 16%;
+	}
+	.vivioNav {
+		height: 100px;
+	}
+	.vivioNav .container-fluid {
+		padding-right: 15px;
+		padding-left: 32px;
+	}
+	.vivioNav #vivio-navbar-brand {
+		width: 70px;
+		height: 70px;
+		background: url(../img/out_logo.jpg);
+		/*background: url(../img/bupt.png);*/
+		background-repeat: no-repeat;
+		top: 20px;
+	}
+	.vivioNav .navbar-header {
+		height: 80px;
+		line-height: 80px;
+		margin-right: 16%;
+	}
+	.vivioNav .navbar-nav li>a {
+		height: 80px;
+		line-height: 49px;
+		padding-left: .8em;
+		padding-right: .8em;
+		font-size: 16px;
+	}
+	.vivioNav #newVersion {
+		display: none;
+	}
+}
+@media (min-width:1270px) {
+	.container {
+		width: 100%;
+		padding: 0;
+	}
+	.vivio-navbar-nav {
+		margin-left: 2%;
+	}
+	.vivioNav {
+		height: 80px;
+	}
+	.vivioNav .container-fluid {
+		padding-right: 15px;
+		padding-left: 32px;
+	}
+	.vivioNav #vivio-navbar-brand {
+		width: 70px;
+		height: 70px;
+		background: url(../img/out_logo.jpg);
+		/*background: url(../img/bupt.png);*/
+		background-repeat: no-repeat;
+	}
+	.vivioNav .navbar-header {
+		height: 80px;
+		line-height: 80px;
+	}
+	.vivioNav .navbar-nav li>a {
+		height: 80px;
+		line-height: 49px;
+		padding-left: 26px;
+		padding-right: 26px;
+		font-size: 16px;
+	}
+	.vivioNav #newVersion {
+		padding: 1px 15px;
+		margin-left: 167px;
+		margin-right: 60px;
+		/*font-size: 12px;*/
+		font-size: 28px;
+		line-height: 26px;
+        font-family:Georgia;
+	}
+}
+@media (min-width:1600px) {
+	.container {
+		width: 1500px;
+	}
+}
+
+/* 导航条结束*/

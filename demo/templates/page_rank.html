@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<title>社交人群信任度可视化</title>
+<script src="../static/js/jQuery v3.1.1.js"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="iceStone <ice@wedn.net>">
+    <title>首页</title>
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/goTop.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+<script src="../static/js/echarts.js"></script>
+<script src="../static/theme/dark.js"></script>
+ <script src="../static/theme/vintage.js"></script>
+<script src="../static/js/dataTool.js"></script>
+<script src="../static/js/page_rank.js"></script>
+</head>
+
+<body >
+{#style="background: #8e8e8e; color: #00aaff"#}
+<!-- 导航 -->
+<nav class="navbar navbar-default vivioNav">
+    <div class="container" style="background: #101010">
+        <div class="navbar-header">
+            {#      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  aria-expanded="false">#}
+            {#        <span class="sr-only">Toggle navigation</span>#}
+            {#        <span class="vivio-icon-bt vivio-icon-bar"></span>#}
+            {#        <span class="vivio-icon-bt vivio-icon-close"></span>#}
+            {#      </button>#}
+            <a id="vivio-navbar-brand" href="/" style="color: white"></a>
+            <a id="newVersion" href="/" style="color: white">北邮图虫系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="vivio-navbar-collapse">
+            <ul class="nav navbar-nav vivio-navbar-nav">
+                <li class="active"><a href="/" style="color:#000000">首页 <span class="sr-only">(current)</span></a></li>
+                <li id="vivio-product-link">
+                    <a style="color:white">核心产品</a>
+                    <!-- 产品下拉导航菜单 -->
+                    <div class="vivio-product">
+{#                        <div class="vivio-container clearfix">#}
+{#                            <dl>#}
+{#                                <dt>知识图谱</dt>#}
+{#                                <dt>语义理解</dt>#}
+{#                                <dt>智能问答</dt>#}
+{#                            </dl>#}
+{#                            <dl>#}
+{#                                <dt>产品1</dt>#}
+{#                                <dt>产品2</dt>#}
+{#                                <dt>产品3</dt>#}
+{#                            </dl>#}
+{#                        </div>#}
+                    </div>
+                    <!-- /产品下拉导航菜单 -->
+                </li>
+                <li id="vivio-product-link">
+                    <a style="color:white">解决方案</a>
+                    <div class="vivio-product">
+{#                        <div class="vivio-container clearfix">#}
+{#                            <dl>#}
+{#                                <dt>知识抽取技术</dt>#}
+{#                            </dl>#}
+{#                            <dl>#}
+{#                                <dt>中文分词技术</dt>#}
+{#                            </dl>#}
+{#                            <dl>#}
+{#                                <dt>表示学习技术</dt>#}
+{#                            </dl>#}
+{#                            <dl>#}
+{#                                <dt>信任评估算法</dt>#}
+{#                            </dl>#}
+{#                        </div>#}
+                    </div>
+                </li>
+                <li id="vivio-product-link">
+                    <a style="color:white" href="/weibo_search">图虫实验室</a>
+                    <div class="vivio-product">
+                        <div class="vivio-container clearfix">
+                            <dl>
+                                <dt><a href="/weibo_search">实体属性查询</a></dt>
+                                <dt><a href="/weibo_search">路径搜索模型</a></dt>
+                                <dt><a href="/weibo_search">智能问答系统</a></dt>
+                                <dt><a href="/evaluation">信任评估模型</a></dt>
+                            </dl>
+                            <dl>
+                                <dt><a href="/weibo_search">nlp分词技术</a></dt>
+                                <dt><a href="/weibo_search">nlp情感分析</a></dt>
+                                <dt><a href="/weibo_search">关系纠错与补全模型</a></dt>
+                                <dt><a href="/weibo_search">歧义关系查询</a></dt>
+                            </dl>
+                            <dl>
+                                <dt><a href="/weibo_search">DEMO3</a></dt>
+                            </dl>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/news" style="color:white">图谱动态</a></li>
+                <li><a href="/about" style="color:white">关于我们</a></li>
+            </ul>
+            {#      <ul class="nav navbar-nav navbar-right hidden-xs">#}
+            {#        <li class="nav-t-kefu"><span class="vivio-icon"></span><em>在线客服</em></li>#}
+            {#          <li class="nav-t-search"><span class="vivio-icon "></span><em>在线客服</em></li>#}
+            {#        <li class="nav-t-userInformation"><span class="vivio-icon"></span></li>#}
+            {#      </ul>#}
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- /导航 -->
+<div id="main" style="width:1300px;height:620px; background: #3f3f3f; color: #00aaff"></div>
+</body>
+</html>

@@ -1,0 +1,407 @@
+/*
+* @Author: mingming
+* @Date:   2017-07-01 18:36:38
+* @Last Modified by:   admin
+* @Last Modified time: 2017-07-06 16:19:32
+*/
+main {
+	background: #fff;
+}
+.vivio-store .container {
+	text-align: center;
+	width: 1120px;
+	padding: 30px 0 0 0;
+}
+.exper-banner {
+	margin-top: 80px;
+	width: 100%;
+	background-image: url(../img/store/3fae765044d5796402b333b9c33a9531.jpg);
+	background-size: cover;
+	height: 500px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.topBar {
+	text-align: left;
+	height: 33px;
+	line-height: 33px;
+	margin-bottom: 20px;
+}
+.topBar .menu {
+	position: absolute;
+	background-color: #fff;
+	z-index: 1;
+	background: #fff;
+	max-height: 0;
+	left: 0;
+	width: 148px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition:all .3s ease-in-out;
+}
+.topBar .menu.open {
+	max-height: 245px;
+	border: 1px #eaeaea solid;
+	border-top: none;
+}
+.topBar .menu a {
+	display: block;
+	padding: 0 10px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	color: #333;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.topBar .menu a:hover, .topBar .menu a:focus, .topBar .menu a.active {
+	text-decoration: none;
+	background: #2ba5d6;
+	color: #fff;
+}
+.vivio-store h2 {
+	font-size: 24px;
+	color: #333;
+	display: inline-block;
+	line-height: 33px;
+	vertical-align: middle;
+}
+.vivio-store .allLink {
+	font-size: 14px;
+	color: #2ba5d6;
+	margin: 0 53px 0 20px;
+	vertical-align: middle;
+}
+.vivio-store .allLink:hover {
+	text-decoration: none;
+}
+.vivio-store form {
+	display: inline-block;
+	vertical-align: middle;
+}
+.vivio-store form strong, .vivio-store form .small-search {
+	float: left;
+	font-weight: normal;
+	font-size: inherit;
+	padding-right: 20px;
+	color: #333;
+	cursor: default;
+}
+.vivio-store form .small-search {
+	position: relative;
+}
+.vivio-store form strong>span {
+	border: 1px #eaeaea solid;
+	display: inline-block;
+	vertical-align: middle;
+	background: #fff;
+	position: relative;
+	padding-right: 36px;
+	height: 34px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	padding-right: 70px;
+	padding-left: 15px;
+	margin-left: 14px;
+	width: 148px;
+}
+.vivio-store form strong>span>span:nth-child(2) {
+	    box-sizing: border-box;
+	text-align: center;
+	width: 34px;
+	height: 34px;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	background: #2ba5d6;
+	border: 1px #2ba5d6 solid;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+.vivio-store form strong>span>span>em {
+	width: 20px;
+	height: 9px;
+	display: inline-block;
+	overflow: hidden;
+	background: url(../img/store/exper-icon.png) -130px -60px no-repeat;
+}
+.vivio-store form .small-search input {
+	float: left;
+}
+.vivio-store form .small-search input:nth-child(1) {
+	width: 285px;
+	height: 34px;
+	line-height: 34px;
+	text-indent: 1em;
+	border: #2ba5d6 solid 1px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 16px;
+
+}
+.vivio-store form .small-search input:nth-child(1):focus, .vivio-store form .small-search input:nth-child(1):active {
+	border-color: #2ba5d6;
+}
+.vivio-store form .small-search input:nth-child(2) {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	border: 0;
+	background: url(../img/store/shop-search.png) no-repeat;
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	top: -1px;
+}
+.shop-star {
+	text-align: left;
+	padding-top: 30px;
+	overflow: hidden;
+}
+.shop-star .shop-star-item {
+	padding: 30px 40px 30px 0;
+}
+.shop-star .shop-star-item .shop-star-contact {
+	text-align: left;
+	display: inline-block;
+	padding-left: 25px;
+	padding-top: 10px;
+	position: relative;
+}
+.shop-star .shop-star-item .shop-star-contact p.shop-address {
+}
+.shop-star .shop-star-item .shop-star-contact p.shop-address b {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	background: url(../img/store/exper-icon.png) -100px -60px no-repeat;
+	position: absolute;
+	top: 56px;
+	left: 0;
+}
+.shop-star .shop-star-item .shop-star-contact p.shop-phone b {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	background: url(../img/store/exper-icon.png) -100px -90px no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.shop-star  .shop-star-item:hover {
+	text-decoration: none;
+	cursor: pointer;
+	color: rgb(0, 140, 214);
+}
+.shop-star  .shop-star-item:hover img {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.shop-star  .shop-star-item:hover img {
+	opacity: .8;
+}
+.shop-star .shop-star-item .shop-star-contact p {
+	line-height: 1.4em;
+	font-size: 14px;
+}
+.shop-star .shop-star-item h3 {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #333;
+	text-overflow: ellipsis;
+}
+.shop-star .shop-star-item .figure {
+	height: 160px;
+	overflow: hidden;
+	float: left;
+	padding: 0;
+}
+b.shop-star-star {
+	margin-top: 10px;
+	width: 79px;
+	height: 14px;
+	display: inline-block;
+	overflow: hidden;
+	background-image: url(../img/store/exper-star.jpg);
+	background-repeat: no-repeat;
+}
+.star_s5 {
+	background-position: 0 -70px;
+}
+.shop-star-switchdot {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.shop-star-switchdot a {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin: 0 5px;
+	background: #ccc;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	border-radius: 100%;
+}
+.shop-star-switchdot a.current {
+	background: #2ba5d6;
+}
+.activitie-star .container {
+	border-top: #eee solid 1px;
+}
+.activitie-star h2 {
+	width: 100%;
+	font-size: 24px;
+	color: #333;
+	display: inline-block;
+	line-height: 33px;
+	vertical-align: middle;
+	text-align: left;
+}
+.activitie-star h3, .activitie-star h4, .activitie-star p {
+	display: inline-block;
+	padding-bottom: 10px;
+	font-size: 14px;
+	line-height: 20px;
+}
+.activitie-star .figure {
+
+	/* text-align: left; */
+}
+.activitie-star ul {
+	padding-top: 20px;
+}
+.activitie-star ul>li {
+	padding-bottom: 30px;
+	text-align: left;
+}
+.activitie-star ul>li h3 {
+	padding-bottom: 20px;
+	display: block;
+	color: #333;
+	font-size: 16px;
+}
+.activitie-star .activitie {
+	padding: 0;
+}
+.activitie-star ul>li h3, .activitie-star ul>li h4 {
+	display: block;
+	line-height: 25px;
+	font-weight: 200;
+}
+.activitie-star ul>li b {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	overflow: hidden;
+	background: url(../img/store/exper-icon.png) no-repeat;
+}
+.activitie-star ul>li b.addressB {
+	background-position: -100px -60px;
+}
+.activitie-star ul>li b.timeB {
+	background-position: -130px 0;
+}
+.activitie-star ul>li b.textB {
+	background-position: -130px -30px;
+}
+.activitie-star ul>li p {
+	padding-left: 20px;
+	font-weight: 200;
+}
+.activitie-star ul>li p b {
+	position: absolute;
+	left: 0;
+	top: 123px;
+}
+.activitie-star ul>li a {
+	border-radius: 3px;
+	background: #2ba5d6;
+	display: inline-block;
+	width: 160px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 17px;
+}
+.activitie-star ul>li a:hover {
+	text-decoration: none;
+}
+.event-expert {
+	padding: 30px 0;
+	margin-top: 30px;
+	border-top: #eee solid 1px;
+	margin-bottom: 30px;
+}
+.event-expert  li {
+	padding: 0;
+}
+.event-expert  li a {
+	width: 85%;
+}
+.event-expert h3 {
+	color: #000;
+	padding-bottom: 20px;
+	width: 100%;
+	font-size: 18px;
+}
+.event-expert a:hover {
+	text-decoration: none;
+	color: #000;
+}
+.event-expert  p {
+	text-align: left;
+	font-size: 14px;
+	line-height: 1.4em;
+	color: rgb(102, 102, 102);
+	font-weight: 200;
+}
+.event-expert a {
+	display: inline-block;
+}
+.event-expert a:hover {
+	opacity: .8;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+.event-expert .figure img {
+	width: 100%;
+}
+#userProvince,
+#vivio-user-city {
+	display: inline-block;
+	width: 81px;
+	overflow: hidden;
+	line-height: 15px;
+	height: 15px;
+}

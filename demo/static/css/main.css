@@ -1,0 +1,656 @@
+/*@Author:mingming
+* @Date:2017-06-15 21:47:29
+* @Last Modified by:   admin
+* @Last Modified time: 2017-07-06 15:12:10
+*/
+body {
+	font-family: "FZLanTingHei-L-GBK", "GothamBook", "helvetica", "arial", "Microsoft Yahei", "微软雅黑", sans-serif;	/* overflow-x: hidden;  */
+}
+
+/* 轮播图开始 */
+#carousel-vivio-generic {
+	position: fixed;
+	left: 0;
+	top: 10px;
+	z-index: -1;
+}
+#carousel-vivio-generic .item {
+	background-size: auto 70%;
+	height: 80%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* 轮播图标题动画开始*/
+#carousel-vivio-generic .item .title {
+	position: absolute;
+}
+#carousel-vivio-generic .item.vivo-x9slive .title {
+	width: 250px;
+	bottom: 50%;
+	margin-left: -125px;
+	left: 50%;
+	margin-bottom: -50px;
+}
+#carousel-vivio-generic .item.vivo-h-stage .title {
+	width: 250px;
+	bottom: 50%;
+	right: 55%;
+}
+#carousel-vivio-generic .item.vivo-x9plus .title {
+	width: 250px;
+	bottom: 50%;
+	right: 55%;
+}
+#carousel-vivio-generic .item.vivo-x9plus .vivo-x9plus-box {
+	position: relative;
+	height: 100%;
+}
+#carousel-vivio-generic .item.vivo-x9plus .figure {
+	right: 10%;
+	height: 794px;
+}
+#carousel-vivio-generic .item.vivo-x9plus .title {
+	width: 225px;
+	bottom: 48%;
+	left: 20%;
+}
+#carousel-vivio-generic .item.vivo-x9plus .title .vivio-car-icon span {
+	border: 1px #2ba5d6 solid;
+	color: #2ba5d6;
+}
+#carousel-vivio-generic .item .vivio-car-icon span {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 30px;
+	width: 90px;
+	height: 30px;
+	border-radius: 30px;
+	border: 1px #fff solid;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+#carousel-vivio-generic .item .vivio-car-icon {
+	width: 100%;
+	cursor: pointer;
+	text-align: center;
+}
+#carousel-vivio-generic .item .vivio-car-icon span:after {
+	position: absolute;
+	right: 12px;
+	top: 11px;
+	background-position: -5px -26px;
+	width: 5px;
+	height: 8px;
+	display: inline-block;
+	content: '';
+	background: url(../img/vivo-high-ico.png);
+	background-size: 100px 100px;
+	margin-left: 8px;
+}
+#carousel-vivio-generic .item.vivo-x9plus .title .vivio-car-icon span:after {
+	background-position: 0 -13px;
+}
+@-webkit-keyframes gogogo {
+	0% {
+		right: 12px;
+	}
+	100% {
+		right: 0;
+	}
+}
+#carousel-vivio-generic .item .vivio-car-icon span:hover:after {
+	background-position: 0 -26px;
+	-webkit-animation: gogogo .3s infinite linear;
+}
+#carousel-vivio-generic .item h2, #carousel-vivio-generic .item .vivio-car-icon {
+	visibility: hidden;
+	opacity: 0;
+	text-align: center;
+	height: 30px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: ease;
+}
+#carousel-vivio-generic .item .vivio-car-icon {
+	margin-top: 50px;
+}
+#carousel-vivio-generic .item.vivo-x9pyy .vivio-car-icon {
+	margin-top: 0;
+}
+#carousel-vivio-generic .item h2, #carousel-vivio-generic .item .vivio-car-icon {
+	height: 37px;
+}
+#carousel-vivio-generic .item h2:nth-child(1) {
+	-webkit-transition-delay: 0s;
+	-moz-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#carousel-vivio-generic .item h2:nth-child(2) {
+	-webkit-transition-delay: .4s;
+	-moz-transition-delay: .4s;
+	transition-delay: .4s;
+}
+#carousel-vivio-generic .item h2:nth-child(3) {
+	-webkit-transition-delay: .8s;
+	-moz-transition-delay: .8s;
+	transition-delay: .8s;
+}
+#carousel-vivio-generic .item .vivio-car-icon {
+	-webkit-transition-delay: 1.2s;
+	-moz-transition-delay: 1.2s;
+	transition-delay: 1.2s;
+}
+#carousel-vivio-generic .item.showTitle h2, #carousel-vivio-generic .item.showTitle .vivio-car-icon {
+	transform: translateY(20px);
+	visibility: visible;
+	opacity: 1;
+}
+#carousel-vivio-generic .item .figure {
+	right: 0;
+	width: 650px;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+}
+#carousel-vivio-generic .item .figure em {
+	-webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	transition: all 2s ease;
+}
+#carousel-vivio-generic .item .figure em:nth-child(1) {
+	position: absolute;
+	top: -20%;
+	right: 125px;
+}
+#carousel-vivio-generic .item .figure em:nth-child(2) {
+	position: absolute;
+	bottom: -20%;
+	right: 0;
+}
+#carousel-vivio-generic .item .figure em img {
+	width: auto;
+	height: 100%;
+}
+#carousel-vivio-generic .item.active .figure em:nth-child(2) {
+	transform: matrix(1, 0, 0, 1, 65, -100);
+	-ms-transform: matrix(1, 0, 0, 1, 65, -100);
+	-moz-transform: matrix(1, 0, 0, 1, 65, -100);
+	-webkit-transform: matrix(1, 0, 0, 1, 65, -100);
+}
+#carousel-vivio-generic .item.active .figure em:nth-child(1) {
+	transform: matrix(1, 0, 0, 1, -57, 100);
+	-ms-transform: matrix(1, 0, 0, 1, -57, 100);
+	-moz-transform: matrix(1, 0, 0, 1, -57, 100);
+	-webkit-transform: matrix(1, 0, 0, 1, -57, 100);
+}
+
+/* 轮播图标题动画结束 */
+#carousel-vivio-generic .item.vivo-x9slive {
+	background-color: #f0f2f5;
+	background-image: url(../img/qa5.png);
+	/*background-image: url(../img/car/02/vm-h-game0627-bg-mini.jpg);*/
+}
+#carousel-vivio-generic .item.vivo-h-stage {
+	background-color: #fff;
+	background-image: url(../img/qa5.png);
+}
+#carousel-vivio-generic .item.fourth {
+	background: #f0f2f5;
+	background-image: url(../img/qa7.jpg);
+}
+#carousel-vivio-generic .item.vivo-x9pyy {
+	background-color: #ffffff;
+	background-image: url(../img/qa4.jpg);
+}
+
+#carousel-vivio-generic .item.trust-model {
+	background-color: #ffffff;
+	background-image: url(../img/qa3.png);
+}
+
+#carousel-vivio-generic .item.entity-ambiguous {
+	background-color: #ffffff;
+	background-image: url(../img/qa6.jpg);
+}
+
+#carousel-vivio-generic .carousel-indicators li {
+	border: none;
+	width: 12px;
+	height: 12px;
+	margin: 6px;
+	background-color: #d9d9d9;
+	transition: all .3s cubic-bezier(.73, .03, .31, 1);
+	transform: scale(.82);
+}
+#carousel-vivio-generic .carousel-indicators li:hover {
+	transform: scale(1);
+	background-color: #2ba5d6;
+}
+#carousel-vivio-generic  .carousel-indicators .active {
+	transform: scale(1);
+	background-color: #2ba5d6;
+}
+@media (max-width:992px) {
+	#carousel-vivio-generic .item.vivo-x9plus .vivo-x9plus-box {
+		width: 100%;
+	}
+}
+@media (min-width:992px)and (max-width:1600px) {
+	#carousel-vivio-generic .item.vivo-x9plus .vivo-x9plus-box {
+		width: 95%;
+	}
+}
+@media (min-width:1600px) {
+	#carousel-vivio-generic .item.vivo-x9plus .vivo-x9plus-box {
+		width: 80%;
+	}
+}
+
+/* 轮播图结束 */
+main {
+	background-color: #f6f7f8;
+}
+
+/* 展示区开始 */
+#showBox li {
+	list-style: none;
+	position: relative;
+	padding: 0;
+}
+#showBox li a {
+	width: 100%;
+}
+#showBox img {
+	width: 100%;
+	height: auto;
+}
+#showBox li a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#showBox li {
+	position: relative;
+}
+#showBox li .vivio-title {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	width: 100%;
+}
+#showBox li .vivio-title h2, #showBox li .vivio-title h3 {
+	text-align: center;
+}
+#showBox li .vivio-title h2 {
+	font-weight: 200;
+	color: #333;
+	line-height: 1em;
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+#showBox li .vivio-title h3 {
+	color: #999;
+	line-height: 1em;
+	font-size: 14px;
+}
+#showBox li .color-black h2 {
+	color: #fff;
+}
+#showBox li .color-black h3 {
+	color: #fff;
+}
+#showBox li.vivio-video:after {
+	width: 80px;
+	height: 80px;
+	content: "";
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -40px 0 0 -40px;
+	background-position: -520px 0;
+	z-index: 9;
+	-webkit-transition: background-color .8s cubic-bezier(0.316967, 0.989541, 0.310022, 1);
+	-moz-transition: background-color .8s cubic-bezier(0.316967, 0.989541, 0.310022, 1);
+	transition: background-color .8s cubic-bezier(0.316967, 0.989541, 0.310022, 1);
+	background-image: url(../img/vivo-gb-ico.png);
+	background-size: 600px 400px;
+	background-repeat: no-repeat;
+}
+#showBox li.vivio-video:hover:after {
+	background-position: -420px 0;
+	cursor: pointer;
+}
+@media (max-width:768px) {
+	#showBox img {
+		height: 260px;
+		width: auto;
+	}
+	#showBox li a {
+		overflow: hidden;
+		text-align: center;
+	}
+	#showBox li {
+		height: 260px;
+	}
+	.vivio-main-container {
+		padding: 32px 10px 0 10px;
+	}
+}
+
+/* 展示区结束 */
+
+/* 活动区开始 */
+
+
+.vivio-main-container {
+	padding: 100px 32px 0 32px;
+	background-color: #f6f7f8;
+}
+.vivio-main-container ul {
+	margin-top: 40px;
+}
+.vivio-main-container li {
+	position: relative;
+	padding: 0;
+}
+.vivio-main-container li a {
+	display: inline-block;
+	width: 100%;
+}
+.activity li img {
+	width: 100%;
+}
+.tips {
+	margin-top: 15px;
+}
+.tips:hover {
+	text-decoration: none;
+}
+.tips:hover>h3, .tips:hover>p {
+	color: #2ba5d6;
+}
+.tips>h3 {
+	font-size: 16px;
+	color: #000;
+	line-height: 1.8em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	-moz-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	transition: color .3s cubic-bezier(.73, .03, .31, 1);
+}
+.tips>p {
+	font-size: 14px;
+	color: #666;
+	line-height: 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 90%;
+	text-overflow: ellipsis;
+	-webkit-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	-moz-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	transition: color .3s cubic-bezier(.73, .03, .31, 1);
+}
+.vivio-main-content ul li>strong {
+	font-weight: bold;
+	display: block;
+	margin: 0;
+	font-size: 14px;
+	color: #999;
+	padding-top: 1em;
+	margin-top: 1em;
+	position: relative;
+}
+.vivio-main-content ul li>strong:after {
+	content: '';
+	width: 20px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ccc;
+}
+.activity>ul>li>strong {
+	display: block;
+	margin: 0;
+	font-size: 14px;
+	color: #999;
+	padding-top: 1em;
+	margin-top: 1em;
+	position: relative;
+}
+.activity>ul>li>strong:after {
+	content: '';
+	width: 20px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ccc;
+}
+.blockTitle {
+	font-size: 24px;
+	line-height: 1em;
+	font-weight: bold;
+	color: #333;
+	display: inline-block;
+	vertical-align: middle;
+}
+.moreInformation {
+	display: inline-block;
+	padding: .5em .5em .5em 1em;
+	color: #999;
+	border-radius: 50px;
+	border: 1px #999 solid;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 12px;
+	-webkit-transition: all .3s cubic-bezier(.73, .03, .31, 1);
+	-moz-transition: all .3s cubic-bezier(.73, .03, .31, 1);
+	transition: all .3s cubic-bezier(.73, .03, .31, 1);
+	margin-left: 15px;
+}
+.moreInformation:hover {
+	text-decoration: none;
+	color: #2ba5d6;
+	border-color: #2ba5d6;
+}
+.moreInformation>span {
+	display: inline-block;
+	width: 6px;
+	height: 8px;
+	background: url(../img/vivo-gb-ico.png);
+	background-position: -582px -124.5px;
+	margin-left: 5px;
+}
+.moreInformation:hover>span {
+	background-position: -582px -137.5px;
+}
+.activity .row {
+	margin: 0;
+}
+@media (max-width:768px) {
+	.vivio-main-content ul li {
+		margin-bottom: 40px;
+	}
+	.vivio-main-container {
+		padding: 40px 5px 0 5px;
+	}
+}
+@media (min-width:768px) and (max-width:992px) {
+	.vivio-main-container li {
+		padding-bottom: 40px;
+	}
+}
+
+/* 活动区结束 */
+
+/* 动态区开始 */
+.vivio-news ul>li {
+	position: relative;
+}
+.vivio-main-container a .inner h3 {
+	font-size: 16px;
+	color: #000;
+	line-height: 1.4em;
+	margin-bottom: .5em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	-moz-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	transition: color .3s cubic-bezier(.73, .03, .31, 1);
+}
+.vivio-main-container a .imgbox {
+	width: 100px;
+	height: 100%;
+	position: absolute;
+}
+.vivio-main-container  a .inner {
+	padding-left: 120px;
+	height: 100px;
+}
+.vivio-main-container a .inner p {
+	font-size: 14px;
+	display: inline-block;
+	color: #666;
+	height: 3em;
+	line-height: 1.5em;
+	margin-bottom: .6em;
+	padding-right: 3em;
+	overflow: hidden;
+	-webkit-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	-moz-transition: color .3s cubic-bezier(.73, .03, .31, 1);
+	transition: color .3s cubic-bezier(.73, .03, .31, 1);
+}
+.vivio-news a .inner h3 em {
+	display: inline-block;
+	padding: .5em;
+	line-height: 1em;
+	border-radius: 5px;
+	font-size: 12px;
+	color: #fff;
+	background: #2ba5d6;
+	margin-right: 5px;
+}
+.vivio-news a:hover {
+	text-decoration: none;
+}
+.vivio-news a:hover .inner h3, .vivio-news a:hover>.inner p {
+	color: #2ba5d6;
+}
+.vivio-news ul li a span {
+	font-size: 12px;
+	color: #999;
+	position: absolute;
+	left: 120px;
+	bottom: 0;
+}
+.vivio-news ul li a:hover span {
+	color: #999;
+}
+
+/* 动态区结束 */
+
+/* 媒体区开始 */
+.vivio-media {
+	margin-top: 70px;
+	padding-bottom: 120px;
+	padding-top: 70px;
+	background: #edeff1;
+}
+.vivio-media a:hover {
+	text-decoration: none;
+}
+.vivio-main-container.vivio-media a .inner p:hover {
+	color: #333;
+}
+.vivio-main-container.vivio-media a {
+	position: relative;
+}
+.vivio-main-container.vivio-media a .imgbox {
+	width: 125px;
+	right: 81px;
+	top: 0;
+}
+.vivio-main-container.vivio-media a .inner {
+	height: 105px;
+	padding-right: 206px;
+	padding-left: 0;
+}
+.vivio-main-container.vivio-media a .inner p {
+	padding: 0;
+}
+.vivio-main-container.vivio-media ul>li strong a:hover {
+	color: rgb(153, 153, 153);
+}
+.vivio-main-container.vivio-media ul>li strong a {
+	width: 96px;
+	color: rgb(153, 153, 153);
+	display: block;
+	margin: 0;
+	overflow: inherit;
+	line-height: 1em;
+	cursor: default;
+	font-weight: bold;
+	font-size: 14px;
+	height: 30px;
+	background-image: url(../img/vivo-gb-ico.png);
+	background-position: -432px -183px;
+	padding-left: 28px;
+	box-sizing: border-box;
+	background-clip: padding-box;
+	background-repeat: no-repeat;
+}
+.vivio-main-container.vivio-media ul>li strong a.weixin {
+	background-position: -567px -183px;
+}
+.vivio-main-container.vivio-media ul>li strong {
+	position: relative;
+}
+@media (max-width:768px) {
+	.vivio-media {
+		margin-top: 16px;
+	}
+	.vivio-media.vivio-main-container {
+		margin-top: 10px !important;
+		padding: 48px 16px 20px 16px;
+	}
+}
+@media (min-width:768px) and (max-width:992px) {
+	.vivio-main-container {
+		padding-top: 80px;
+	}
+	.vivio-media.vivio-main-container {
+		padding-top: 70px;
+	}
+	.vivio-main-container.vivio-media a .inner {
+		padding-right: 246px;
+		padding-left: 40px;
+	}
+	.vivio-main-container.vivio-media a .inner {
+		height: 80px;
+	}
+	.vivio-media.vivio-main-container li {
+		padding-bottom: 60px;
+	}
+	.vivio-media.vivio-main-container {
+		padding-bottom: 30px;
+	}
+}
+
+/* 媒体区结束 */
+
+/* 居中类 */
+.vivio-main-content {
+	max-width: 1400px;
+	margin: 0 auto;
+}

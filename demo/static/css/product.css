@@ -1,0 +1,246 @@
+/*
+* @Author: admin
+* @Date:   2017-06-29 16:06:12
+* @Last Modified by:   mingming
+* @Last Modified time: 2017-07-01 19:26:59
+*/
+body{
+	position: relative;
+	width: 100%；
+}
+
+
+/* 产品页面容器 */
+.vivio-products {
+    max-width: 1100px;
+    margin: 80px auto 0 auto;
+	background: #2e6da4;
+	/*background: #fafafa;*/
+}
+
+/* 页面标题开始 */
+.vivio-products h2{
+	text-align: center;
+	background: #fff;
+	display: block;
+	line-height: 80px;
+	height: 80px;
+	position: relative;
+	width: 100%;
+}
+.vivio-products h2  i{
+	    height: 1px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #dcdcdc;
+}
+.vivio-products h2 strong{
+
+font-size: 18px;
+    color: #333;
+    background: #fafafa;
+    display: inline-block;
+    padding: 0 10px;
+    font-weight: normal;
+    position: relative;
+    }
+/* 页面标题结束 */
+
+
+/* 推荐产品开始 */
+.vivio-products .products-list {
+	margin-bottom: 10px;
+}
+.vivio-products .products-list .vivio-product-left{
+	background: #fff;
+	border: 1px #eee solid;
+	padding: 0;
+
+}
+.vivio-products .products-list .vivio-product-left a{
+	display: inline-block;
+	height: 332px;
+	width: 100%;
+	border-bottom: 1px #eee solid;
+
+}
+.vivio-products .products-list .vivio-product-left a .bigBox{
+	height: 100%;
+	position: relative;
+}
+
+.vivio-products .products-list .vivio-product-left a .bigBox .boxItem{
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	margin-top: -50px;
+}
+.vivio-products .products-list  a  span{
+	display: inline-block;
+    padding: 3px 10px;
+    color: #2ba5d6;
+    border: 1px solid #2ba5d6;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.vivio-products .products-list .vivio-product-left  .smallBox{
+	padding: 0;
+	text-align: center;
+	position: relative;
+}
+.vivio-products .products-list .vivio-product-left  .smallBox:nth-child(2){
+    border-right:1px #eee solid;
+	    margin-right: -1px;
+}
+
+.vivio-products .products-list  h3{
+	text-align: center;
+	margin-top: 30px;
+}
+.vivio-products .products-list .vivio-product-left  .smallBox .figure{
+
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    margin-left: -105px;
+}
+.vivio-products .products-list .vivio-product-right{
+	height: 665px;
+	padding: 0;
+	background: #f4efe6;
+	text-align: center;
+	position: relative;
+}
+.vivio-products .products-list .vivio-product-right .figure{
+	position: absolute;
+	bottom: -1px;
+	right: 0;
+}
+/* 推荐产品结束 */
+
+/* 全部产品开始 */
+.allProduct {
+	background: #fff;
+	margin-top: 10px;
+	border:1px #eee solid;
+}
+.allProduct  h3{
+	font-size: 18px;
+    color: #333;
+    padding: 5px 30px;
+    text-align: center;
+}
+.allProduct .row{
+	margin: 0;
+
+}
+.allProduct .row .itemBox{
+	padding: 0;
+	height: 350px;
+	text-align: center;
+}
+.allProduct .row .itemBox a:hover{
+	text-decoration: none;
+}
+
+.allProduct .row .itemBox:nth-child(1),
+.allProduct .row .itemBox:nth-child(2),
+.allProduct .row .itemBox:nth-child(3){
+	border-right:1px #eee solid;
+	border-bottom:1px #eee solid;
+}
+.allProduct .row:nth-child(1),
+.allProduct .row:nth-child(2){
+	border-bottom:1px #eee solid;
+}
+
+/* 全部产品结束 */
+
+
+/* 翻页开始 */
+.page {
+	padding-top: 40px;
+	text-align: center;
+}
+.page ul li{
+	display: inline-block;
+	    width: 31px;
+    height: 31px;
+
+}
+.page ul{
+	display: inline-block;
+}
+.page ul li a{
+	display: inline-block;
+    width: 31px;
+    height: 31px;
+    text-align: center;
+    line-height: 31px;
+    vertical-align: middle;
+    font-size: 18px;
+    color: #666;
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+.page ul li a:hover{
+	text-decoration: none;
+color: #2ba5d6;
+
+}
+.page ul li a.current{
+color: #131ad6;
+}
+.page ul li a.next{
+	background: url(../img/products/vivo_l_pages-ico.png) no-repeat;
+	background-position: -32px 0;
+    background-size: 100px 100px;
+}
+.page ul li:hover a.next{
+	background-position: -32px -32px;
+}
+.page form{
+	display: inline-block;
+}
+.page form input{
+	    width: 30px;
+    padding: 0 5px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+.page form span{
+	    font-size: 18px;
+    color: #666;
+    vertical-align: middle;
+}
+.page form button{
+    width: 31px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    background-color: #2ba5d6;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
+    border:none;
+}
+/* 翻页结束 */
+
+
+/* 满屏类 */
+.vivio-container-fluid{
+	padding: 0;
+	background: #fff;
+}
+.vivio-main-content{
+	padding-bottom: 50px;
+}

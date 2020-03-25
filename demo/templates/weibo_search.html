@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图虫实验室</title>
+    <link rel="stylesheet" href="../static/css/weibo_search_home.css">
+    <link rel="stylesheet" href="../static/css/weibo_search_home_1.css" media="only screen and (max-width:1200px)"/>
+    <script src="../static/js/jQuery v3.1.1.js"></script>
+    <script>
+        function hide_block(tag, taget) {
+            var op = document.getElementsByClassName(taget)[0];
+            if (tag) {       //tag==1 隐藏
+                op.style.display = "none";
+            }
+            else {
+                op.style.display = "block";
+            }
+        }
+        function search() {
+            {#alert("hello world")#}
+            var inputValue = document.getElementById("search_content").value;
+            alert(inputValue)
+            window.location.href = "/demo?entity="+inputValue
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="header_box fr">
+        <ul>
+            <li class="change_color"><a class="change_color" href="/">北京邮电大学图虫实验室</a></li>
+            <li>|</li>
+            <li>
+                <div class="fl change_color">登录</div>
+                <div class="user fl"></div>
+            </li>
+            <li>
+                <div class="setting" onclick=""></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="content_top">
+        <div class="find">
+            <div class="find_input">
+                <input class="biy_input" id="search_content" type="text" onfocus="hide_block(0,'hot_new')"
+                       onblur="hide_block(1,'hot_new')">
+                {#                <input class="biy_submit" type="submit" value="">#}
+                <input class="biy_submit" type="button" onclick="search()" value="">
+                <div class="hot_new">
+                    <div class="title">格式化使用说明（输入中的“:”为英文状态下）</div>
+                    <div class="new">
+                        <div class="new_num_hot">微博搜索</div>
+                        <div class="new_title">weibo:用户名</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">网络搜索</div>
+                        <div class="new_title">network:马云</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">歧义实体</div>
+                        <div class="new_title">mention:马云</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">社交搜索</div>
+                        <div class="new_title">ad_social:miguel,1</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">信任搜索</div>
+                        <div class="new_title">ad_trust:raph,stric,1</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">社交搜索</div>
+                        <div class="new_title">fb_social:1,2</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">关系评估</div>
+                        <div class="new_title">fb_relation:7744,12577,1</div>
+                    </div>
+                    <div class="new">
+                        <div class="new_num_hot">中文分词</div>
+                        <div class="new_title">nlp:你好啊</div>
+                    </div>
+{#                    <div class="new">#}
+{#                        <div class="new_num_hot">情感分析</div>#}
+{#                        <div class="new_title">emotion:今天吃了一份很好吃的饭啊</div>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer_wrap fl">
+        @数据来源-新浪微博
+    </div>
+    <div class="footer_wrap fr" style="position: center">
+        <ul>
+            <li>@2018 北京邮电大学图虫实验室</li>
+            <li>|</li>
+            <li><a href="/weibo_search" target="_blank" class="text_line">隐私声明和Cookie</a></li>
+            <li>|</li>
+            <li class="text_line">使用条款</li>
+            <li>|</li>
+            <li class="text_line"></li>
+            <li>|</li>
+            <li class="text_line">帮助</li>
+            <li>|</li>
+            <li class="text_line fan_kui">反馈</li>
+        </ul>
+    </div>
+</div>
+</body>
+{#<script src="../static/js/weibo_search_home.js"></script>#}
+</html>

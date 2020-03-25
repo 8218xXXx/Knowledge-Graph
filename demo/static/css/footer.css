@@ -1,0 +1,183 @@
+/*
+* @Author: mingming
+* @Date:   2017-07-01 19:25:02
+* @Last Modified by:   admin
+* @Last Modified time: 2017-07-06 11:32:08
+*/
+
+/* 尾部开始 */
+footer {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	padding-top: 40px;
+	background: #222;
+	text-align: center;
+	height: 350px;
+}
+footer .row {
+	margin: 0;
+}
+footer .shareLink {
+	padding-top: 20px;
+}
+footer .shareLink a {
+	width: 45px;
+	height: 45px;
+	overflow1:hidden;
+	display: inline-block;
+	margin: 0 15px;
+	background-color: #666;
+	border-radius: 23px;
+	-webkit-transition: background-color .3s ease;
+	-moz-transition: background-color .3s ease;
+	transition: background-color .3s ease;
+}
+footer .shareLink a>b {
+	background-image: url(../img/vivo-gb-ico.png);
+	background-size: 600px 400px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 18px;
+	width: 22px;
+	margin-top: 13.5px;
+	line-height: 45px;
+}
+footer .shareLink a.share-weibo>b {
+	background-position: -432px -93px;
+}
+footer .shareLink a.share-wechact>b {
+	background-position: -565px -93px;
+}
+ 
+footer .shareLink a.share-vi>b {
+	background-position: -297px -93px;
+}
+footer .shareLink a.share-tieba>b {
+	background-position: -343px -93px;
+}
+footer .shareLink a.share-buluo>b {
+	background-position: -207px -93px;
+}
+footer .shareLink a.share-kefu>b {
+	background-position: -251px -93px;
+	height: 18px;
+	width: 22px;
+	margin-top: 9px;
+	vertical-align: top;
+	margin-right: 5px;
+}
+footer .shareLink a.share-kefu {
+	width: 140px;
+	height: 36px;
+	line-height: 37px;
+	border-radius: 18px;
+	color: #fff;
+	margin-left: 45px;
+	font-weight: 200;
+	font-size: 14px;
+	margin-top: 3px;
+	text-align: center;
+	line-height: 36px;
+}
+footer .shareLink a.share-weibo:hover {
+	background-color: #f04545;
+}
+footer .shareLink a.share-wechact:hover {
+	background-color: #20a900;
+}
+footer .shareLink a.share-vi:hover {
+	background-color: #2ba5d6;
+}
+footer .shareLink a.share-tieba:hover {
+	background-color: #2185ee;
+}
+footer .shareLink a.share-buluo:hover {
+	background-color: #42b0f4;
+}
+footer .shareLink a.share-kefu:hover {
+	text-decoration: none;
+	background-color: #2ba5d6;
+}
+footer .shareLink a.share-kefu {
+	position: relative;
+}
+footer .shareLink a.share-kefu:before {
+	display: block;
+	content: '';
+	width: 1px;
+	height: 45px;
+	background: #666;
+	position: absolute;
+	top: 50%;
+	left: -30px;
+	margin-top: -22px;
+}
+footer .siteLinks {
+	padding-top: 40px;
+}
+footer .siteLinks a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 200;
+	color: #666;
+	margin: 0 6px;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	transition: color .3s ease;
+}
+footer .siteLinks a:hover {
+	color: #2ba5d6;
+	text-decoration: none;
+}
+#footerEnglish {
+	position: relative;
+	padding-right: 10px;
+}
+#footerEnglish:hover {
+	text-decoration: none;
+}
+#footerEnglish span {
+	background-image: url(../img/vivo-gb-ico.png);
+	background-size: 600px 400px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+	background-position: -594px -125px;
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+#footerEnglish:hover span {
+	background-position: -594px -134px;
+}
+footer .copyRight {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 12px;
+	line-height: 1.4em;
+	color: #666;
+	margin-top: 20px;
+}
+.copyRight p img {
+	width: 15px;
+	height: 15px;
+	margin-top: -2px;
+}
+.copyRight p  a:hover {
+	text-decoration: none;
+	color: #2ba5d6;
+}
+@media (max-width:768px) {
+	footer .shareLink a.share-kefu {
+		margin-top: 10px;
+	}
+	footer .siteLinks a {
+		margin-top: 7px;
+	}
+}
+
+/* 尾部结束 */
